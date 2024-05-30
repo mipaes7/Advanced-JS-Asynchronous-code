@@ -129,7 +129,7 @@ const getAndPrintGitHubUserProfile = async (username) => {
     }
 }
 
-const userNames1 = ['octocat', 'alenriquez96', 'alejandroereyesb'];
+const userNames = ['octocat', 'alenriquez96', 'alejandroereyesb'];
 const realNames = ['The Octocat', 'Alberto Enríquez', 'Alejandro Reyes'];
 
 const fetchGithubUsers = async (userNames) => {
@@ -150,5 +150,9 @@ const fetchGithubUsers = async (userNames) => {
     })
 
     let result = await Promise.all(arr);
+    console.log(result);
+    result.forEach((user) => {
+        console.log(user.name, user.html_url);
+    })
     return result;
 }
